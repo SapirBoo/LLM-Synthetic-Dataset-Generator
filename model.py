@@ -1,4 +1,7 @@
 # define helper function to load model and tokenizer - include cache
+from transformers import AutoTokenizer, AutoModelForCausalLM, TextStreamer, BitsAndBytesConfig, TextIteratorStreamer
+import re
+import torch
 from functools import lru_cache
 
 @lru_cache(maxsize=4)

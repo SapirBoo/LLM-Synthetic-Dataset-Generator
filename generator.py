@@ -1,3 +1,8 @@
+from config import HF_MODELS, system_message
+from prompts import build_user_prompt
+from model import load_model
+from formatter import format_data
+
 def generate_data(model,prompt_style,studio_style,studio_type,rows,description,topic):
 
   if prompt_style == "Creative":
@@ -27,7 +32,6 @@ def generate_data(model,prompt_style,studio_style,studio_type,rows,description,t
     **inputs,
     max_new_tokens=4000,
 )
-  #response = groqai.chat.completions.create(model=MODELS[model], messages=messages)
 
   generated_tokens = outputs[0][inputs["input_ids"].shape[-1]:]
   generated = tokenizer.decode(

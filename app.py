@@ -1,3 +1,7 @@
+import gradio as gr
+from config import HF_MODELS 
+from generator import generate_data
+
 with gr.Blocks() as ui:
 
     gr.Markdown("# 🧠 Synthetic Dataset Generator")

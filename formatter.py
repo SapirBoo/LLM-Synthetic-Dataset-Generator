@@ -1,3 +1,8 @@
+
+import re
+import json
+import pandas as pd
+
 def format_data(data):
   content = re.sub(r"<think>.*?</think>", "",data,
     flags=re.DOTALL).strip()
